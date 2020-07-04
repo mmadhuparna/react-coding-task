@@ -24,7 +24,7 @@ render(){
         <div className="col col-md-8 offset-md-2 shadow">
         <Provider store={store}>
           <Switch>
-            
+          <Route path = "/" exact = {true} render = { () => <Redirect to = "places"/> } />{/*to make 'places' the default page*/}
             <Route path="/place/:id" component = {PlaceDetails}/>
             <Route path = "/places" component = {PlaceApp}/>
             <Route path = "/favorites" component = {Favorites}/>
