@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import {Route, Switch, Redirect} from 'react-router-dom'
+import Header from './components/shared/Header';
+import Footer from './components/shared/Footer'
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import PlaceDetails from './components/places/PlaceDetails';
+import PlaceApp from './components/places/PlaceApp';
+import {Favorites} from './components/places/Favorites';
 
-function App() {
+import './App.css'
+
+class App extends Component{
+render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="container ">
+      <div className="row">
+        <div className="col">
+          <Header/>
+          </div>
+          </div>
+
+        <div className="row">
+        <div className="col col-md-8 offset-md-2 shadow">
+        <Provider store={store}>
+          <Switch>
+            
+            <Route path="/place/:id" component = {PlaceDetails}/>
+            <Route path = "/places" component = {PlaceApp}/>
+            <Route path = "/favorites" component = {Favorites}/>
+          </Switch>
+          
+          </Provider>
+          </div>
+          </div>
+
+        <div className="row">
+        <div className="col">
+          <Footer/>
+          </div>
+          </div>
+      </div>
+    
   );
+
 }
+}
+
+
 
 export default App;
