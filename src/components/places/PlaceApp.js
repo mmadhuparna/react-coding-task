@@ -30,8 +30,6 @@ class PlaceApp extends Component{
     
     }
 
-   
-
     render(){
         return(
             <div>

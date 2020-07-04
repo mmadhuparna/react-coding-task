@@ -16,8 +16,7 @@ class PlaceDetails extends Component{
         placesApi.getcity(cityid).then(res =>{       //api call 
             console.log(JSON.stringify(res.data));
              var result = res.data;
-             
-            
+                         
                 if(res !== null || res!== "") {
                     this.setState({
                         city:res.data[0]//res.data is in array format

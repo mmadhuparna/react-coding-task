@@ -12,9 +12,7 @@ class DetailsForm extends Component{
             errors: ""
            
         }
-        
-
-        
+      
     }
     
     //to check if input is empty or negative
@@ -37,8 +35,6 @@ class DetailsForm extends Component{
         if(errors === ""){
         const cityId = this.state.cityId
         this.props.history.push('/place/'+ cityId)
-          
-        
         }
         else{
           this.setState({
@@ -60,8 +56,7 @@ class DetailsForm extends Component{
 render(){
   const{errors}=this.state;
   return(
-    
-      
+          
     <form onSubmit={this.handleSubmit}>
       <FormGroup controlId="citydetails">
         
@@ -75,7 +70,6 @@ render(){
       </FormGroup>
       
       <Button 
-      
       type ="submit" 
       variant="info">Get Details</Button>
     </form>

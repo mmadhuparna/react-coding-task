@@ -6,8 +6,7 @@ import {Place} from './Place';
 
  
 class PlaceList extends Component{
-   
-    
+       
 render(){
     console.log(this.props.placeList)
     
